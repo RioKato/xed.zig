@@ -1,0 +1,14 @@
+.{
+    .name = .xed,
+    .version = "0.0.0",
+    .fingerprint = 0xf7f6da5957cac86c,
+    .minimum_zig_version = "0.14.1",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "c",
+        "compat",
+    },
+}

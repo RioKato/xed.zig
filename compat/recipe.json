@@ -1,0 +1,47 @@
+{
+  "units": [
+    {
+      "file": "compat.c",
+      "flags": [
+        "-m64",
+        "-std=c99",
+        "-pedantic",
+        "-Wall",
+        "-Wunused",
+        "-Werror",
+        "-Wno-long-long",
+        "-Wno-unknown-pragmas",
+        "-fmessage-length=0",
+        "-pipe",
+        "-fno-exceptions",
+        "-Wformat-security",
+        "-Wformat",
+        "-fomit-frame-pointer",
+        "-Wextra",
+        "-Wno-error=type-limits",
+        "-Werror=format-security",
+        "-fstack-protector-strong",
+        "-fPIC",
+        "-Wstrict-prototypes",
+        "-Wwrite-strings",
+        "-Wredundant-decls",
+        "-DXED_VERSION=v2025.06.08",
+        "-DXED_AVX",
+        "-DXED_SUPPORTS_LZCNT_TZCNT",
+        "-DXED_AMD_ENABLED",
+        "-DXED_VIA_ENABLED",
+        "-DXED_SUPPORTS_AVX512",
+        "-DXED_MPX",
+        "-DXED_CET",
+        "-DXED_APX",
+        "-DXED_SUPPORTS_SHA",
+        "-DXED_DECODER",
+        "-DXED_ENCODER",
+        "-DXED_BUILD"
+      ]
+    }
+  ],
+  "includes": [
+    "."
+  ]
+}
