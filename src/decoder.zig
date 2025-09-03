@@ -88,11 +88,11 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_masked_vector_operation(&self.inner) != 0;
     }
 
-    pub fn vectorLengthBits(self: *const Self) usize {
+    pub fn vectorLengthBits(self: *const Self) c_uint {
         return c.xed_decoded_inst_vector_length_bits(&self.inner);
     }
 
-    pub fn getNprefixes(self: *const Self) usize {
+    pub fn getNprefixes(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_nprefixes(&self.inner);
     }
 
@@ -104,23 +104,23 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_operands(&self.inner);
     }
 
-    pub fn operandLengthBits(self: *const Self, operand_index: c_uint) usize {
+    pub fn operandLengthBits(self: *const Self, operand_index: c_uint) c_uint {
         return c.xed_decoded_inst_operand_length_bits(&self.inner, operand_index);
     }
 
-    pub fn operandLength(self: *const Self, operand_index: c_uint) usize {
+    pub fn operandLength(self: *const Self, operand_index: c_uint) c_uint {
         return c.xed_decoded_inst_operand_length(&self.inner, operand_index);
     }
 
-    pub fn noperands(self: *const Self) usize {
+    pub fn noperands(self: *const Self) c_uint {
         return c.xed_decoded_inst_noperands(&self.inner);
     }
 
-    pub fn operandElements(self: *const Self, operand_index: c_uint) usize {
+    pub fn operandElements(self: *const Self, operand_index: c_uint) c_uint {
         return c.xed_decoded_inst_operand_elements(&self.inner, operand_index);
     }
 
-    pub fn operandElementSizeBits(self: *const Self, operand_index: c_uint) usize {
+    pub fn operandElementSizeBits(self: *const Self, operand_index: c_uint) c_uint {
         return c.xed_decoded_inst_operand_element_size_bits(&self.inner, operand_index);
     }
 
@@ -144,7 +144,7 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_zeroing(&self.inner) != 0;
     }
 
-    pub fn avx512DestElements(self: *const Self) usize {
+    pub fn avx512DestElements(self: *const Self) c_uint {
         return c.xed_decoded_inst_avx512_dest_elements(&self.inner);
     }
 
@@ -168,7 +168,7 @@ pub const Decoder = extern struct {
         c.xed_decoded_inst_zero_keep_mode_from_operands(&self.inner, &operands_);
     }
 
-    pub fn getLength(self: *const Self) usize {
+    pub fn getLength(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_length(&self.inner);
     }
 
@@ -176,11 +176,11 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_get_byte(&self.inner, arg_byte_index);
     }
 
-    pub fn getMachineModeBits(self: *const Self) usize {
+    pub fn getMachineModeBits(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_machine_mode_bits(&self.inner);
     }
 
-    pub fn getStackAddressModeBits(self: *const Self) usize {
+    pub fn getStackAddressModeBits(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_stack_address_mode_bits(&self.inner);
     }
 
@@ -208,7 +208,7 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_get_iform_enum(&self.inner);
     }
 
-    pub fn getIformEnumDispatch(self: *const Self) usize {
+    pub fn getIformEnumDispatch(self: *const Self) c_uint {
         return c.compat_xed_decoded_inst_get_iform_enum_dispatch(&self.inner);
     }
 
@@ -220,7 +220,7 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_get_base_reg(&self.inner, mem_idx);
     }
 
-    pub fn getScale(self: *const Self, mem_idx: c_uint) usize {
+    pub fn getScale(self: *const Self, mem_idx: c_uint) c_uint {
         return c.xed_decoded_inst_get_scale(&self.inner, mem_idx);
     }
 
@@ -228,11 +228,11 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_get_memory_displacement(&self.inner, mem_idx);
     }
 
-    pub fn getMemoryDisplacementWidth(self: *const Self, mem_idx: c_uint) usize {
+    pub fn getMemoryDisplacementWidth(self: *const Self, mem_idx: c_uint) c_uint {
         return c.xed_decoded_inst_get_memory_displacement_width(&self.inner, mem_idx);
     }
 
-    pub fn getMemoryDisplacementWidthBits(self: *const Self, mem_idx: c_uint) usize {
+    pub fn getMemoryDisplacementWidthBits(self: *const Self, mem_idx: c_uint) c_uint {
         return c.xed_decoded_inst_get_memory_displacement_width_bits(&self.inner, mem_idx);
     }
 
@@ -240,11 +240,11 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_get_branch_displacement(&self.inner);
     }
 
-    pub fn getBranchDisplacementWidth(self: *const Self) usize {
+    pub fn getBranchDisplacementWidth(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_branch_displacement_width(&self.inner);
     }
 
-    pub fn getBranchDisplacementWidthBits(self: *const Self) usize {
+    pub fn getBranchDisplacementWidthBits(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_branch_displacement_width_bits(&self.inner);
     }
 
@@ -252,15 +252,15 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_get_unsigned_immediate(&self.inner);
     }
 
-    pub fn getImmediateIsSigned(self: *const Self) usize {
+    pub fn getImmediateIsSigned(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_immediate_is_signed(&self.inner);
     }
 
-    pub fn getImmediateWidth(self: *const Self) usize {
+    pub fn getImmediateWidth(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_immediate_width(&self.inner);
     }
 
-    pub fn getImmediateWidthBits(self: *const Self) usize {
+    pub fn getImmediateWidthBits(self: *const Self) c_uint {
         return c.xed_decoded_inst_get_immediate_width_bits(&self.inner);
     }
 
@@ -292,7 +292,7 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_uses_rflags(&self.inner) != 0;
     }
 
-    pub fn numberOfMemoryOperands(self: *const Self) usize {
+    pub fn numberOfMemoryOperands(self: *const Self) c_uint {
         return c.xed_decoded_inst_number_of_memory_operands(&self.inner);
     }
 
@@ -312,11 +312,11 @@ pub const Decoder = extern struct {
         return c.xed_decoded_inst_conditionally_writes_registers(&self.inner) != 0;
     }
 
-    pub fn getMemoryOperandLength(self: *const Self, memop_idx: c_uint) usize {
+    pub fn getMemoryOperandLength(self: *const Self, memop_idx: c_uint) c_uint {
         return c.xed_decoded_inst_get_memory_operand_length(&self.inner, memop_idx);
     }
 
-    pub fn getMemopAddressWidth(self: *const Self, memop_idx: c_uint) usize {
+    pub fn getMemopAddressWidth(self: *const Self, memop_idx: c_uint) c_uint {
         return c.xed_decoded_inst_get_memop_address_width(&self.inner, memop_idx);
     }
 
